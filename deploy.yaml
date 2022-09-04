@@ -1,0 +1,19 @@
+---
+- name: test the yaml in ansible
+  hosts: all
+  become: yes
+  vars:
+    age: " age is 21"
+  vars_prompt:
+    - name: name1
+      prompt: What is your name?
+      private: no
+  tasks:
+  - name: print the value
+    ansible.builtin.debug:
+        msg: "customer name is {{ name1 }} and {{ age }}"
+        
+  - name: print direct value
+    ansible.builtin.debug:
+        msg: "testing the print"
+
