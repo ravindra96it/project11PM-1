@@ -4,6 +4,7 @@
   become: yes
   vars:
     age: " age is 21"
+    emp: "ntt"
   vars_prompt:
     - name: name1
       prompt: What is your name?
